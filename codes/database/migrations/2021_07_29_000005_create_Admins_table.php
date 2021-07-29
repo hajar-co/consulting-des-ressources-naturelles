@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'Admin';
+    public $tableName = 'Admins';
 
     /**
      * Run the migrations.
-     * @table Admin
+     * @table Admins
      *
      * @return void
      */
@@ -22,10 +22,11 @@ class CreateAdminTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('idAdmin');
-            $table->string('Full name', 20);
+            $table->increments('id');
+            $table->string('FullName', 20);
             $table->string('email', 50);
             $table->string('password', 20);
+            $table->timestamps();
         });
     }
 

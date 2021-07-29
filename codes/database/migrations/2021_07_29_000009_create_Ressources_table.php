@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePartenairesHasProjetTable extends Migration
+class CreateRessourcesTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'partenaires_has_Projet';
+    public $tableName = 'Ressources';
 
     /**
      * Run the migrations.
-     * @table partenaires_has_Projet
+     * @table Ressources
      *
      * @return void
      */
@@ -22,21 +22,25 @@ class CreatePartenairesHasProjetTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('partenaires_idPartenaire');
-            $table->unsignedInteger('Projet_idProjet');
+            $table->increments('id');
+            $table->longText('probleme');
+            $table->string('localisation', 45);
+            $table->unsignedInteger('Clients_id');
+            $table->unsignedInteger('types_id');
+            $table->timestamps();
 
-            $table->index(["Projet_idProjet"], 'fk_partenaires_has_Projet_Projet1_idx');
+            $table->index(["Clients_id"], 'fk_Ressources_Client1_idx');
 
-            $table->index(["partenaires_idPartenaire"], 'fk_partenaires_has_Projet_partenaires1_idx');
+            $table->index(["types_id"], 'fk_Ressources_type1_idx');
 
 
-            $table->foreign('partenaires_idPartenaire', 'fk_partenaires_has_Projet_partenaires1_idx')
-                ->references('idPartenaire')->on('partenaires')
+            $table->foreign('Clients_id', 'fk_Ressources_Client1_idx')
+                ->references('id')->on('Clients')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('Projet_idProjet', 'fk_partenaires_has_Projet_Projet1_idx')
-                ->references('idProjet')->on('Projet')
+            $table->foreign('types_id', 'fk_Ressources_type1_idx')
+                ->references('id')->on('types')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

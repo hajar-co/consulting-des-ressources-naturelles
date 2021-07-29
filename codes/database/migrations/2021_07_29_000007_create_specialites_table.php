@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePartenairesTable extends Migration
+class CreateSpecialitesTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'partenaires';
+    public $tableName = 'specialites';
 
     /**
      * Run the migrations.
-     * @table partenaires
+     * @table specialites
      *
      * @return void
      */
@@ -22,8 +22,9 @@ class CreatePartenairesTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('idPartenaire');
-            $table->longText('logo');
+            $table->increments('id');
+            $table->string('nom', 45);
+            $table->timestamps();
         });
     }
 

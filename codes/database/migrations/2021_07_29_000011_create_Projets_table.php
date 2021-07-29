@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActualitiesTable extends Migration
+class CreateProjetsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'Actualities';
+    public $tableName = 'Projets';
 
     /**
      * Run the migrations.
-     * @table Actualities
+     * @table Projets
      *
      * @return void
      */
@@ -22,18 +22,27 @@ class CreateActualitiesTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('idActualities');
+            $table->increments('id');
             $table->longText('image');
             $table->string('title', 250);
             $table->longText('content');
             $table->date('date');
-            $table->unsignedInteger('Equipe_idEquipe');
+            $table->unsignedInteger('Ressources_id');
+            $table->unsignedInteger('Equipes_id');
+            $table->timestamps();
 
-            $table->index(["Equipe_idEquipe"], 'fk_Actualities_Equipe1_idx');
+            $table->index(["Ressources_id"], 'fk_Projet_Ressources1_idx');
+
+            $table->index(["Equipes_id"], 'fk_Projet_Equipe1_idx');
 
 
-            $table->foreign('Equipe_idEquipe', 'fk_Actualities_Equipe1_idx')
-                ->references('idEquipe')->on('Equipe')
+            $table->foreign('Ressources_id', 'fk_Projet_Ressources1_idx')
+                ->references('id')->on('Ressources')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('Equipes_id', 'fk_Projet_Equipe1_idx')
+                ->references('id')->on('Equipes')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRessourcesTable extends Migration
+class CreateCollaborateursTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'Ressources';
+    public $tableName = 'collaborateurs';
 
     /**
      * Run the migrations.
-     * @table Ressources
+     * @table collaborateurs
      *
      * @return void
      */
@@ -22,24 +22,22 @@ class CreateRessourcesTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('idRessource');
-            $table->longText('probleme');
-            $table->string('localisation', 45);
-            $table->unsignedInteger('Client_idClient');
-            $table->unsignedInteger('type_idType');
+            $table->increments('partenaires_id');
+            $table->unsignedInteger('Projets_id');
+            $table->timestamps();
 
-            $table->index(["Client_idClient"], 'fk_Ressources_Client1_idx');
+            $table->index(["Projets_id"], 'fk_collaborateurs_Projet1_idx');
 
-            $table->index(["type_idType"], 'fk_Ressources_type1_idx');
+            $table->index(["partenaires_id"], 'fk_collaborateurs_partenaires1_idx');
 
 
-            $table->foreign('Client_idClient', 'fk_Ressources_Client1_idx')
-                ->references('idClient')->on('Client')
+            $table->foreign('partenaires_id', 'fk_collaborateurs_partenaires1_idx')
+                ->references('id')->on('partenaires')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('type_idType', 'fk_Ressources_type1_idx')
-                ->references('idType')->on('type')
+            $table->foreign('Projets_id', 'fk_collaborateurs_Projet1_idx')
+                ->references('id')->on('Projets')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

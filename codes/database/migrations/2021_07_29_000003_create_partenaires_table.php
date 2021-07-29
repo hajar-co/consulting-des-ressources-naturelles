@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExperiencesTable extends Migration
+class CreatePartenairesTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'experiences';
+    public $tableName = 'partenaires';
 
     /**
      * Run the migrations.
-     * @table experiences
+     * @table partenaires
      *
      * @return void
      */
@@ -22,17 +22,9 @@ class CreateExperiencesTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('idExperience');
-            $table->longText('description');
-            $table->unsignedInteger('Client_idClient');
-
-            $table->index(["Client_idClient"], 'fk_experiences_Client1_idx');
-
-
-            $table->foreign('Client_idClient', 'fk_experiences_Client1_idx')
-                ->references('idClient')->on('Client')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->increments('id');
+            $table->longText('logo');
+            $table->timestamps();
         });
     }
 

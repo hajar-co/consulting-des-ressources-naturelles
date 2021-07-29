@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClientTable extends Migration
+class CreateTypesTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'Client';
+    public $tableName = 'types';
 
     /**
      * Run the migrations.
-     * @table Client
+     * @table types
      *
      * @return void
      */
@@ -22,10 +22,9 @@ class CreateClientTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('idClient');
-            $table->string('name', 20);
-            $table->string('email', 80);
-            $table->string('password', 25);
+            $table->increments('id');
+            $table->string('titre', 100);
+            $table->timestamps();
         });
     }
 
