@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\Models\Actualitie;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,11 +13,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route::get('/actualities', function () {
+//     return Actualitie::all();
+// });
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Auth::routes();
+Route::get('{any}', function ($any) {
+    return view('index');
+})->where('any','.*');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::resource('equipe', App\Http\Controllers\EquipeController::class);
