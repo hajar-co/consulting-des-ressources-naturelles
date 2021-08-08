@@ -3,7 +3,7 @@ require('./bootstrap');
 import Vue from 'vue'
 
 
-import App from './pages/Apropos.vue'
+import App from './pages/loginClient.vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 

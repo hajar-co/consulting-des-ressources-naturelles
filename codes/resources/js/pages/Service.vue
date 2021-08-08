@@ -88,12 +88,10 @@ export default {
     justify-content: center;
     align-items: center;
     align-content: center;
-    /* height:200vh; */
 }
 h1{
     padding-top: 60px;
     padding-bottom: 40px;
-
     color: #0F044C;
 }
 h6{
@@ -103,17 +101,13 @@ h6{
     padding-top: 60px;
     padding-bottom: 40px;
 }
-p{
 
-  /* font-family:'Times New Roman', Times, serif   */
-}
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;
     padding: .5rem 0rem;
     }
 .button{ 
-    /* padding-top: 20px; */
     padding-bottom: 40px;
     }
 .btn-info {
