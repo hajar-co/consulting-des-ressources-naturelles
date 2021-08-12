@@ -36,6 +36,9 @@ data: function () {
 </script>
 
 <style>
+#footer{
+  font-family: 'Poppins', sans-serif;
+    } 
 .container1 {
   width: 80%;
   margin: 0 auto;
@@ -43,7 +46,9 @@ data: function () {
   }
 .footer-one {
   padding: 12px 0px;
-  background-color: #F4F4F4; }
+  background-color: #F4F4F4; 
+  font-family: 'Poppins', sans-serif;
+  }
   .footer-one > div {
     display: flex;
     flex-direction: row;
@@ -103,7 +108,8 @@ data: function () {
     justify-items: center;
     align-items: center;
     height: 20vh;
-    justify-content: center;  
+    justify-content: center; 
+    font-family: 'Poppins', sans-serif; 
   }
   .icons {
     width: 10%;
@@ -130,11 +136,15 @@ data: function () {
     justify-items: center;
     align-items: center;
     align-content: center;
+    font-family: 'Poppins', sans-serif;
     }
     .copyright{
       font-size: .9em;
-      /* font-family: "poppins"; */
       margin: 0 0;
     }
+    @font-face {
+      font-family: 'Poppins', sans-serif;
+      src: local('Poppins'), url('../../fonts/Poppins-Regular.ttf')  format('truetype'),  
+    } 
 
 </style>

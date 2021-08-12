@@ -2,15 +2,17 @@
 <div class="contain">
   <NavBar/>
    <div class="login">
-        <h1><u>Login Client</u></h1>
-        <form action="" method="">
+        <h1><u>Créer un compte</u></h1>
+        <form action="./login" method="post">
+            <label for="name">Nom complet:</label>
+            <input type="text" name="name" placeholder="Entrer votre nom">
             <label for="email">Email:(*)</label>
             <input type="email" required placeholder="Entrer votre adress email" name="email" id="email"><br/>
             <label for="password">Password:(*)</label>
             <input type="password" required placeholder="Enter your password" name="password" id="password"><br/>
             <input type="checkbox" name="rememberme" id="rememberme"> <label for="rememberme">Remember me</label><br/>
-           <router-link to='/formulaire'><button type="submit" name="submit">Login</button></router-link>
-            <router-link to='/Sign-up' ><u>Créer un nouveau compte</u></router-link>
+            <button type="submit" name="submit">Créer un compte</button>
+            <router-link to='/login-client'><u>Un compte déja existe </u></router-link>
         </form>
    </div>
     <Footer/>
@@ -35,6 +37,7 @@ export default {
 .contain{
     width: 100%;
     height: 100vh;
+    font-family: 'poppins',sans-serif;
 }
 .login{
     text-align:center;
@@ -47,6 +50,13 @@ export default {
 }
 form{
     text-align:left;
+}
+input[type=text]{
+padding:10px 15px;
+border-radius:5px;
+border:1px solid grey;
+width:calc(100% - 30px);
+margin-bottom: 20px;
 }
 input[type=email]{
 padding:10px 15px;

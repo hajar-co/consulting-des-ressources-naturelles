@@ -40,7 +40,7 @@
                    
             </div>
 
-           <a href="#" class="button"><button type="submit" class="btn btn-info">Cliquez ici pour bénificier</button></a>
+           <router-link to='/login-client' class="button"><button type="submit" class="btn btn-info">Cliquez ici pour bénificier</button></router-link>
 
 
             </div>
@@ -118,7 +118,7 @@ h6{
 
 /* @import url("https://fonts.googleapis.com/css?family=Poppins:400"); */
 @font-face {
-      font-family: 'Poppins';
+      font-family: 'Poppins', sans-serif;
       src: local('Poppins'), url('../../fonts/Poppins-Regular.ttf')  format('truetype'),  
     } 
 </style>

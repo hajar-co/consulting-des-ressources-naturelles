@@ -1,4 +1,5 @@
 <template>
+<div class="containHeader">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -11,7 +12,7 @@
               
                 <p class="text-CSS">
                      Valoriser vos ressources en un seul clic </p>
-                <button type="submit" class="btn btn-info">Démarrer ici</button>
+                <router-link to='/login-client' class="btn btn-info" >Démarrer ici</router-link>
 
             </div>
         </div>
@@ -20,7 +21,7 @@
               
                 <p class="text-CSS">
                      Valoriser vos ressources en un seul clic </p>
-                <button type="submit" class="btn btn-info">Démarrer ici</button>
+                <router-link to='/login-client' class="btn btn-info" >Démarrer ici</router-link>
 
             </div>
         </div>
@@ -29,7 +30,7 @@
              
                 <p class="text-CSS">
                       Valoriser vos ressources en un seul clic </p>
-                <button type="submit" class="btn btn-info">Démarrer ici</button>
+                <router-link to='/login-client' class="btn btn-info" >Démarrer ici</router-link>
             </div>
         </div> 
      </div>
@@ -42,7 +43,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
+</div>
     
 </template> 
 
@@ -54,6 +55,9 @@ name:'header',
 </script>
 
 <style scoped>
+.containHeader{
+    font-family: 'Poppins', sans-serif;
+}
 .carousel-item {
     height: 90vh;
     min-height: 350px;
@@ -94,4 +98,8 @@ name:'header',
     align-items: center; 
     padding: 100px;
     }}
+ @font-face {
+      font-family: 'Poppins', sans-serif;
+      src: local('Poppins'), url('../../fonts/Poppins-Bold.ttf')  format('truetype'),  
+    } 
 </style>

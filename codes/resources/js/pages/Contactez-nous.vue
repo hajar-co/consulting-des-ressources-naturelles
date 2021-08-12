@@ -56,6 +56,7 @@ export default {
 .contain{
     width: 100%;
     margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
 }
 .containContact{
     width: 80%;
@@ -125,7 +126,7 @@ form .form-group {
     padding: 7px 20px;
 }
 @font-face {
-      font-family: 'Poppins';
+      font-family: 'Poppins', sans-serif;
       src: local('Poppins'), url('../../fonts/Poppins-Bold.ttf')  format('truetype'),  
     } 
 </style>

@@ -1,8 +1,8 @@
 
 <template>
   <div class="contain">
-     <NavBar/>  
-     <Header/>   
+       <NavBar/>  
+     <Header/> 
      <div class="containApropos">
          <h1>A propos</h1> 
             <p class="text-center">EnvirEauSan Conseil est un bureau d’Etude disposant d’une solide 
@@ -70,7 +70,7 @@ import MyLogo from '../../images/logo.svg';
 import avatar from '../../images/mane.png';
 
 export default {
-    name:"home",
+    name:"Apropos",
     components: {
         NavBar,
         Header,
@@ -88,7 +88,7 @@ export default {
 .contain{
     width: 100%;
     margin: 0 auto;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 .containApropos{
     width: 60%;
@@ -132,7 +132,7 @@ h6{
 }
 
 @font-face {
-      font-family: 'Poppins';
+      font-family: 'Poppins', sans-serif;
       src: local('Poppins'), url('../../fonts/Poppins-Bold.ttf')  format('truetype'),  
     } 
 </style>

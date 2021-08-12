@@ -9,8 +9,7 @@
             <label for="password">Password:(*)</label>
             <input type="password" required placeholder="Enter your password" name="password" id="password"><br/>
             <input type="checkbox" name="rememberme" id="rememberme"> <label for="rememberme">Remember me</label><br/>
-            <button type="submit" name="submit">Login</button>
-            <a href="http://"><u>Créer un nouveau compte</u></a>
+            <router-link to='/Dashboard-equipe'><button type="submit" name="submit">Login</button></router-link>
         </form>
    </div>
     <Footer/>
@@ -53,12 +52,14 @@ padding:10px 15px;
 border-radius:5px;
 border:1px solid grey;
 width:calc(100% - 30px);
+margin-bottom: 20px;
 }
 input[type=password]{
 padding:10px 15px;
 border-radius:5px;
 border:1px solid grey;
 width:calc(100% - 30px);
+margin-bottom: 20px;
 }
 button{
     display:block;
@@ -68,5 +69,6 @@ button{
     background:#04AA6D;
     color:#fff;
     border-radius:5px;
+    margin-bottom: 20px;
 }
 </style>
