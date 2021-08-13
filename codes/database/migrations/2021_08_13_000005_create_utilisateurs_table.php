@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpecialitesTable extends Migration
+class CreateUtilisateursTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'specialites';
+    public $tableName = 'utilisateurs';
 
     /**
      * Run the migrations.
-     * @table specialites
+     * @table utilisateurs
      *
      * @return void
      */
@@ -23,7 +23,10 @@ class CreateSpecialitesTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('nom', 45);
+            $table->string('name', 20);
+            $table->string('email', 80);
+            $table->string('password', 25);
+            $table->string('role', 5);
             $table->timestamps();
         });
     }

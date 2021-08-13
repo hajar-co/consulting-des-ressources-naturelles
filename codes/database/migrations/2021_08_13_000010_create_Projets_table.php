@@ -28,21 +28,13 @@ class CreateProjetsTable extends Migration
             $table->longText('content');
             $table->date('date');
             $table->unsignedInteger('Ressources_id');
-            $table->unsignedInteger('Equipes_id');
             $table->timestamps();
 
-            $table->index(["Ressources_id"], 'fk_Projet_Ressources1_idx');
-
-            $table->index(["Equipes_id"], 'fk_Projet_Equipe1_idx');
+            $table->index(["Ressources_id"], 'fk_Projets_Ressources1_idx');
 
 
-            $table->foreign('Ressources_id', 'fk_Projet_Ressources1_idx')
+            $table->foreign('Ressources_id', 'fk_Projets_Ressources1_idx')
                 ->references('id')->on('Ressources')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('Equipes_id', 'fk_Projet_Equipe1_idx')
-                ->references('id')->on('Equipes')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
