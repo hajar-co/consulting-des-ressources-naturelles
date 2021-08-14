@@ -27,7 +27,7 @@ class CreateProjetsTable extends Migration
             $table->string('title', 250);
             $table->longText('content');
             $table->date('date');
-            $table->unsignedInteger('Ressources_id');
+            $table->unsignedInteger('Ressources_id')->nullable();
             $table->timestamps();
 
             $table->index(["Ressources_id"], 'fk_Projets_Ressources1_idx');

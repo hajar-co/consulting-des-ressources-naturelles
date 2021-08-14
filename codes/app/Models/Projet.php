@@ -17,9 +17,6 @@ class Projet extends Model
     public function ressource(){
         return $this->belongsTo(Ressource::class);
     }
-    public function equipe(){
-        return $this->belongsTo(Equipe::class);
-    }
     public function partenaire(){
         return $this->belongsToMany(Partenaire::class, 'collaborateurs');
     }

@@ -11,9 +11,12 @@ class Ressource extends Model
     protected $fillable = [
         'probleme',
         'localisation',
+        'telephone',
+        'utilisateurs_id',
+        'types_id',
     ];
     public function client(){
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(Utilisateur::class);
     }
     public function type(){
         return $this->belongsTo(Type::class);

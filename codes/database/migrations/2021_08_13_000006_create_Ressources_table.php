@@ -25,7 +25,7 @@ class CreateRessourcesTable extends Migration
             $table->increments('id');
             $table->longText('probleme');
             $table->string('localisation', 45);
-            $table->string('telephone', 30);
+            $table->string('telephone', 30)->nullable();
             $table->unsignedInteger('utilisateurs_id');
             $table->unsignedInteger('types_id');
             $table->timestamps();

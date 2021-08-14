@@ -14,9 +14,9 @@ class Actualitie extends Model
         'title',
         'content',
         'date',
-        'Equipes_id',
+        'utilisateurs_id',
     ];
     public function equipe(){
-        return $this->belongsTo(Equipe::class);
+        return $this->belongsTo(Utilisateur::class);
     }
 }

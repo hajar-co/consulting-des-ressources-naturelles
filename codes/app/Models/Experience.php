@@ -10,8 +10,9 @@ class Experience extends Model
     use HasFactory;
     protected $fillable = [
         'description',
+        'utilisateurs_id',
     ];
     public function client(){
-        return $this->belongsTo(Client::class);}
+        return $this->belongsTo(Utilisateur::class);}
    
 }
