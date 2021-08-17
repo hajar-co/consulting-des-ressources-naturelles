@@ -2,7 +2,7 @@
 <div class="contain">
   <NavBar/>
    <div class="login">
-        <h1><u>Login Client</u></h1>
+        <h1><u>Login</u></h1>
         <form action="" method="">
             <label for="email">Email:(*)</label>
             <input type="email" required placeholder="Entrer votre adress email" name="email" id="email"><br/>

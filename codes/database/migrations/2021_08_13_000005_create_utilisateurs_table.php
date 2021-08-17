@@ -24,10 +24,10 @@ class CreateUtilisateursTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 20);
-            $table->string('email', 80);
-            $table->string('password', 25);
-            $table->string('role', 5)->default('3');
-            $table->timestamps();
+            // $table->string('email', 80);
+            // $table->string('password', 200);
+            // $table->string('role', 5)->default('3');
+            // $table->timestamps();
         });
     }
 

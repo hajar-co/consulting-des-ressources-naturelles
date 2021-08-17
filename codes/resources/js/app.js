@@ -7,9 +7,7 @@ import VueRouter from 'vue-router'
 import Apropos from './pages/Apropos'
 import Service from './pages/Service'
 import Contactez from './pages/Contactez-nous'
-import logAdmin from './pages/LoginAdmin'
-import logequipe from './pages/LoginEquipe'
-import logclient from './pages/LoginClient'
+import login from './pages/Login'
 import signUp from './pages/SignUp'
 import DashClient from './pages/DashClient'
 import DashEquipe from './pages/DashEquipe'
@@ -37,16 +35,8 @@ const routes = [
         component:Contactez,
     },
     {
-        path:'/login-admin',
-        component:logAdmin,
-    },
-    {
-        path:'/login-equipe',
-        component:logequipe,
-    },
-    {
-        path:'/login-client',
-        component:logclient,
+        path:'/login',
+        component:login,
     },
     {
         path:'/Sign-up',

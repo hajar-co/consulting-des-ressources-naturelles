@@ -9,19 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item active"><router-link to='/' class="nav-link">Accueil</router-link></li>
-                <li class="nav-item active"><router-link to='/services' class="nav-link">Nos services</router-link></li>
                 <li class="nav-item active"><router-link to='/Apropos' class="nav-link">A propos</router-link></li>
+                <li class="nav-item active"><router-link to='/services' class="nav-link">Nos services</router-link></li>
                 <li class="nav-item active"><router-link to='/contactez-nous' class="nav-link">Contactez-nous</router-link></li>
-                <li class="nav-item active dropdown">
-                   <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="login">Log in
-                    <span class="caret"></span></a>
-            
-                   <ul class="dropdown-menu">
-                      <li class="nav-item active"><router-link to='/login-admin' class="nav-link">- Admin</router-link></li>
-                      <li class="nav-item active"><router-link to='/login-equipe' class="nav-link">- Equipe </router-link></li>
-                      <li class="nav-item active"><router-link to='/login-client' class="nav-link">- Client</router-link></li>
-                    </ul>
-                </li>
+                <li class="nav-item active"><router-link to='/login' class="nav-link">Log in</router-link></li>
                 <li class="nav-item active"><router-link to='/Sign-up' class="nav-link">Sign up</router-link></li>
            </ul>
     </div>
