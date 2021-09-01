@@ -34,6 +34,10 @@
                 <label for="localisation" class="form-label">Localisation :</label>
                 <input type="text" name="localisation" placeholder="le lieu ex: région Safi..." class="form-control">
         </div>
+        <div>
+                <label for="tel" class="form-label">Téléphone :</label>
+                <input type="text" name="tel" placeholder="+212....." class="form-control">
+        </div>
         <div class="form-group text-center">
                 <button type="submit" class="btn btn-info ">Envoyer</button>
         </div>
@@ -73,7 +77,7 @@ export default {
     margin: 0 auto;
     display: flex;
     align-items: center;
-     justify-items: center; 
+    justify-items: center; 
     align-content: center; 
     color: #F2F2F2;
 }
@@ -94,7 +98,7 @@ form{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
 }
 .typeRess{
     display: flex;
@@ -103,6 +107,7 @@ form{
     justify-content: space-between;
 }
  .btn-info {
+     margin-top: 15px;
     background-color: #04AA6D;
     border-color: #04AA6D;
  }

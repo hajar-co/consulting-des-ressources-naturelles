@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Ressource extends Model
 {
@@ -12,11 +13,11 @@ class Ressource extends Model
         'probleme',
         'localisation',
         'telephone',
-        'utilisateurs_id',
+        'users_id',
         'types_id',
     ];
     public function client(){
-        return $this->belongsTo(Utilisateur::class);
+        return $this->belongsTo(User::class);
     }
     public function type(){
         return $this->belongsTo(Type::class);

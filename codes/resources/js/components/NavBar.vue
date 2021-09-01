@@ -12,8 +12,13 @@
                 <li class="nav-item active"><router-link to='/Apropos' class="nav-link">A propos</router-link></li>
                 <li class="nav-item active"><router-link to='/services' class="nav-link">Nos services</router-link></li>
                 <li class="nav-item active"><router-link to='/contactez-nous' class="nav-link">Contactez-nous</router-link></li>
-                <li class="nav-item active"><router-link to='/login' class="nav-link">Log in</router-link></li>
-                <li class="nav-item active"><router-link to='/Sign-up' class="nav-link">Sign up</router-link></li>
+                <li v-if="!this.$store.getters.authenticated" class="nav-item active"><router-link to='/login' class="nav-link">Log in</router-link></li>
+                <li v-if="!this.$store.getters.authenticated" class="nav-item active"><router-link to='/Sign-up' class="nav-link">Sign up</router-link></li>
+                <li v-if="this.$store.getters.authenticated && this.$store.getters.admin" class="nav-item active"><router-link to='/Dashboard-admin' class="nav-link">Dashboard</router-link></li>
+                <li v-if="this.$store.getters.authenticated && this.$store.getters.equipe" class="nav-item active"><router-link to='/Dashboard-equipe' class="nav-link">Dashboard</router-link></li>
+                <li v-if="this.$store.getters.authenticated && this.$store.getters.client" class="nav-item active"><router-link to='/formulaire' class="nav-link">Dashboard</router-link></li>
+
+                <li v-if="this.$store.getters.authenticated" @click.prevent="logout" class="nav-item  active"><div class="nav-link">Log out</div></li>
            </ul>
     </div>
 </nav>
@@ -28,7 +33,12 @@ name: 'navbar',
 data: function () {
             return {
       logo: MyLogo
-  }}
+  }},
+  methods:{
+    logout() {
+      this.$store.commit('CLEAR_USER_DATA')
+    }
+  }
 }
 
 </script>

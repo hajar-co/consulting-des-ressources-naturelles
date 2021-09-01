@@ -26,17 +26,17 @@ class CreateRessourcesTable extends Migration
             $table->longText('probleme');
             $table->string('localisation', 45);
             $table->string('telephone', 30)->nullable();
-            $table->unsignedInteger('utilisateurs_id');
+            $table->unsignedInteger('users_id');
             $table->unsignedInteger('types_id');
             $table->timestamps();
 
-            $table->index(["utilisateurs_id"], 'fk_Ressources_utilisateurs1_idx');
+            $table->index(["users_id"], 'fk_Ressources_users1_idx');
 
             $table->index(["types_id"], 'fk_Ressources_types1_idx');
 
 
-            $table->foreign('utilisateurs_id', 'fk_Ressources_utilisateurs1_idx')
-                ->references('id')->on('utilisateurs')
+            $table->foreign('users_id', 'fk_Ressources_users1_idx')
+                ->references('id')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 

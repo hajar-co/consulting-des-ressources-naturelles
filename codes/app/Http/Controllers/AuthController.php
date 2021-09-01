@@ -15,12 +15,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class AuthController extends Controller
 {
     
-    // use AuthenticatesUsers;
-    public function registration()
-    {
-        return view('auth.registration');
-    }
-
+    use AuthenticatesUsers;
+   
     public function signUp(Request $request)
     {  
         $validatedData = $request->validate([
@@ -33,6 +29,7 @@ class AuthController extends Controller
             'name' =>$validatedData['name'] ,
             'email' => $validatedData['email'] ,
             'password' => bcrypt($validatedData['password']),
+            'role' => $request['role'],
         ]);
 
         $token = $utilisateur->createToken('mytoken')->plainTextToken;
@@ -45,16 +42,14 @@ class AuthController extends Controller
         // return redirect("dashboard")->withSuccess('You have signed-in');
         // return redirect()->route('dashClient');
     }
-    public function loginForm(){
-        return view('auth.registration');
-    }
+   
     public function loginUser(Request $request)
     {
-        // $validatedData = $request->validate([
+        $request->validate([
 
-        //     'email' => 'required|email',
-        //     'password' => 'required|min:6',
-        // ]);
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ]);
         
         // check email
         // $utilisateur = User::where('email',  $validatedData['email'])->first();
@@ -80,7 +75,7 @@ class AuthController extends Controller
                   ];
         return response($response, 201);
         }elseif($user->role == "1"){
-            $token = $user-> createToken ('mytoken')->plainTextToken;
+            $token = $user->createToken ('mytoken')->plainTextToken;
                  $response = [
                 'utilisateur' => $user,
                 'token' =>  $token 
@@ -90,27 +85,7 @@ class AuthController extends Controller
        
 
         // if(Auth::attempt($request->only('email', 'password'))){
-        //    if(Auth::user()->role == "3"){
-           
-        //     $response = [
-        //             'utilisateur' => 'hi',
-        //             'token' =>  'hi'
-        //         ];
-        //     return response ($response, 201);
-        // }
-        // else{
-        //     $response = [
-        //         'utilisateur' => 'hi',
-        //         'token' =>  'hi'
-        //     ];
-        //     return response ($response);
-        // }
-        // return ('hi');
-   
-        // };
        
-          
-    
         
         // $token = $utilisateur->createToken('mytoken')->plainTextToken;
         // $response = [
@@ -133,7 +108,7 @@ class AuthController extends Controller
   
     
     public function logout(Request $request) {
-        // auth()->user()->currentAccessToken()->delete();
+        
         $request->user()->currentAccessToken()->delete();
         return[
             'message' => 'Logged out'

@@ -18,6 +18,11 @@ class User extends Authenticatable
         'password',
         'role',
     ];
+
+    protected $attributes = [
+        'role' => '3',
+    ];
+    
     public function experience(){
         return $this->hasMany(Experience::class);
     }

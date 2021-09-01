@@ -138,21 +138,18 @@
             <div class="expcontent">
                 <div class="expe">
                     <img :src="avatar" class="sizimg">
-                    <p class="text-center">"jbjLorem ipsum dolor sit amet, consectetur adipisicing elit lorem ipsum dolor sit amet, 
-                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua."</p>
+                    <p class="text-center">"Merci bien l'équipe Ressource.ma vraiment le service est top et même après sevice toujours ils répondent 
+                        à temps, vraiment merci."</p>
                 </div>
                 <div class="expe">
                     <img :src="avatar" class="sizimg">
-                    <p class="text-center">"jbjLorem ipsum dolor sit amet, consectetur adipisicing elit lorem ipsum dolor sit amet, 
-                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua."</p>
+                    <p class="text-center">"Merci bien l'équipe Ressource.ma vraiment le service est top et même après sevice toujours ils répondent 
+                        à temps, vraiment merci."</p>
                 </div>
                 <div class="expe">
                     <img :src="avatar" class="sizimg">
-                    <p class="text-center">"jbjLorem ipsum dolor sit amet, consectetur adipisicing elit lorem ipsum dolor sit amet, 
-                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua."</p>
+                    <p class="text-center">"Merci bien l'équipe Ressource.ma vraiment le service est top et même après sevice toujours ils répondent 
+                        à temps, vraiment merci."</p>
                 </div>
                 </div>
             <h1>Partenaires</h1>
@@ -197,7 +194,7 @@ import act3 from '../../images/pom.jpg';
 import avat from '../../images/mane.png';
 import log1 from '../../images/ocp.png';
 import log2 from '../../images/lem.jpg';
-import log3 from '../../images/akena.png';
+import log3 from '../../images/ocp.png';
 import log4 from '../../images/pmv.jpg';
 
 
